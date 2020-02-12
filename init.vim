@@ -9,15 +9,14 @@ let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet',
 " by default, if you open tsx file, neovim does not show syntax colors
 " vim-tsx will do all the coloring for jsx in the .tsx file
 Plug 'ianks/vim-tsx'
-"------------------------ VIM TSX ------------------------
-" by default, if you open tsx file, neovim does not show syntax colors
-" typescript-vim will do all the coloring for typescript keywords
+
 Plug 'leafgarland/typescript-vim'
 " Ale
 Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
+Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'

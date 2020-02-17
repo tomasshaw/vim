@@ -49,7 +49,7 @@ highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 " LEADER 
-let mapleader = '.'
+let mapleader = ' '
 
 "Mostrar tabs
 set list

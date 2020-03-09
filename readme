@@ -1,6 +1,3 @@
-Los archivos del folder 'wsplugs' should go en ~/.vim/pack .
-Ejemplo de ruta (scriptnames):
-~/.vim/pack/wsplugs/start/ale/plugin/ale.vim
-
-El vimrc asume que esta ale.
-Vim 8.0+ required.
+nVim. 
+Instalar plug.
+npm deberia estar global 

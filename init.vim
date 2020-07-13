@@ -2,7 +2,8 @@
 call plug#begin('~/.vim/plugged')
 "------------------------ COC ------------------------
 " coc for tslinting, auto complete and prettier
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-eslint']
 "------------------------ VIM TSX ------------------------
@@ -13,16 +14,13 @@ Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
 " Ale
 Plug 'dense-analysis/ale'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/nerdtree'
-Plug 'jiangmiao/auto-pairs'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-
-"------------------------ THEME ------------------------
-" most importantly you need a good color scheme to write good code :D
 Plug 'dikiaap/minimalist'
 call plug#end()
 " == VIMPLUG END ================================
@@ -35,13 +33,11 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 let g:jsx_ext_required = 0
 
 let g:ale_fixers = {
-\ 'javascript': ['eslint']
+\ 'javascript': ['prettier', 'eslint']
 \ }
 let g:ale_linters = {
 \ 'javascript': ['prettier-eslint', 'eslint'],
 \ }
-"let g:ale_sign_error = '❌'
-"let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:user_emmet_leader_key=','
@@ -53,12 +49,7 @@ let mapleader = ' '
 
 "Mostrar tabs
 set list
-"set listchars=tab:>-,trail:.
 set listchars=tab:>.,trail:-
-"Bajar el timeout del doble tecla
-"set timeout timeoutlen=150
-
-"set selectmode=mouse
 " Better display for messages
 set cmdheight=2
 
@@ -122,7 +113,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set mouse=
-
 set number
 
 " resulados de busquedas resaltados
@@ -173,5 +163,5 @@ vnoremap > >gv
 
 set ic
 set smartcase
-let g:gitgutter_async=0
 setlocal iskeyword-=:
+set clipboard+=unnamedplus

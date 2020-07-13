@@ -1,3 +1,8 @@
-nVim. 
-Instalar plug.
-npm deberia estar global 
+Required:
+Install
+-npm
+-nvm / node
+-fzf
+-NeoVim
+
+run :PlugInstall

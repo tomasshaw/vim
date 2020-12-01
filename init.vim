@@ -10,7 +10,6 @@ let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet',
 " by default, if you open tsx file, neovim does not show syntax colors
 " vim-tsx will do all the coloring for jsx in the .tsx file
 Plug 'ianks/vim-tsx'
-
 Plug 'leafgarland/typescript-vim'
 " Ale
 Plug 'dense-analysis/ale'
@@ -21,7 +20,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'dikiaap/minimalist'
+Plug 'morhetz/gruvbox'
 call plug#end()
 " == VIMPLUG END ================================
 " == AUTOCMD ================================ 
@@ -33,10 +32,14 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 let g:jsx_ext_required = 0
 
 let g:ale_fixers = {
-\ 'javascript': ['prettier', 'eslint']
+\ 'javascript': ['prettier', 'eslint'],
+\ 'css': ['prettier', 'eslint'],
+\ 'json': ['prettier', 'eslint']
 \ }
 let g:ale_linters = {
-\ 'javascript': ['prettier-eslint', 'eslint'],
+\ 'javascript': ['prettier', 'prettier-eslint', 'eslint'],
+\ 'css': ['prettier','prettier-eslint', 'eslint'],
+\ 'json': ['prettier', 'eslint']
 \ }
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
@@ -90,7 +93,7 @@ set smartindent
 "Enable Syntax
 set t_Co=256
 syntax enable
-colorscheme minimalist
+colorscheme gruvbox
 set background=dark
 
 "BackSpace
